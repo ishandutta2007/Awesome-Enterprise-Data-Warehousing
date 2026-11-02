@@ -44,67 +44,19 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## SaaS/Hosted Platforms
 
-
-
-- **Snowflake Enterprise Edition**
-
-  **Multi-cluster, shared-data architecture** with separation of storage, compute, and services. **Pricing**: **Enterprise $3.00/credit** (AWS US East) ; Standard $2.00; Business Critical $4.00. **Free tier**: Trial credits. **Best for**: enterprises wanting fully managed elasticity with strict workload isolation—**trade-off**: consumption-based costs require active warehouse management.
-
-
-
-- **Teradata VantageCloud Enterprise**
-
-  **Enterprise MPP warehouse** with consumption-based unit pricing. **Pricing**: **Enterprise from $9,000/month** (1-year commitment, includes 10 TB raw storage); **Enterprise+ from $10,500/month**; **Optimized Cloud from $31,000/month** . **Free tier**: None. **Best for**: large enterprises with existing Teradata investments—**trade-off**: setup fees apply; annual commitment required.
-
-
-
-- **Amazon Redshift**
-
-  **MPP data warehouse** with RA3 instances and Serverless option. **Pricing**: **Serverless $0.36/RPU-hour** (us-east-1); **Provisioned RA3** with Reserved Instances **41–76% cheaper than On-Demand** for 24/7 workloads . **Free tier**: AWS Free Tier applies. **Best for**: AWS-centric organizations wanting mature MPP with independent scaling—**trade-off**: Serverless only cheaper below ~70% utilization; Provisioned for steady workloads.
-
-
-
-- **Google BigQuery Enterprise**
-
-  **Fully serverless analytics warehouse**. **Pricing**: On-demand (per TB scanned) or Editions (capacity-based); **Enterprise Edition $0.06/slot-hour** with CMEK, BI Engine, and commitment discounts. **Free tier**: 1 TB queries/month and 10 GB storage. **Best for**: teams wanting zero operational overhead with spiky workloads—**trade-off**: Editions require capacity modeling; break-even above ~50 slots.
-
-
-
-- **Microsoft Fabric**
-
-  **Unified data platform** on OneLake. **Pricing**: **Capacity-based (F SKUs)** measured in Capacity Units, billed per second with 1-minute minimum; F2, F4, F8, F16, F32, F64, F128 tiers; **1-year capacity reservations** available for discounts . **Free tier**: Trial available. **Best for**: Microsoft-centric organizations with existing Power BI and Azure investments—**trade-off**: storage and networking billed separately.
-
-
-
-- **Oracle Exadata Cloud**
-
-  **Enterprise database cloud** with Exadata infrastructure. **Pricing**: **BYOL** discounts database compute only; infrastructure subscription billed monthly regardless of use; **OCPU vs ECPU** distinction matters—4 ECPUs = 1 core; idle enabled cores waste 10–20% of database charge . **Free tier**: None. **Best for**: Oracle-centric enterprises needing maximum database performance—**trade-off**: complex licensing; scaling to zero stops compute billing but not infrastructure.
-
-
-
-- **SAP Datasphere**
-
-  **Enterprise data service** within SAP BTP. **Pricing**: **Per capacity unit (CU) per year**; **minimum 1,532 CUs**; 3-month minimum contract; free tier available in SAP BTP . **Free tier**: Yes, limited. **Best for**: SAP-centric enterprises needing integrated data fabric—**trade-off**: capacity unit estimation requires SAP Datasphere Estimator.
-
-
-
-- **IBM Db2 Warehouse on Cloud**
-
-  **Managed Db2 warehouse** with Gen 3 architecture. **Pricing**: **On-demand** or **Reserved Instance (1-year or 3-year)** for compute savings; instances cannot be deleted before RI period ends . **Free tier**: Trial available. **Best for**: IBM-centric enterprises wanting managed Db2—**trade-off**: RI commitment locks instances for term.
-
-
-
-- **Yellowbrick**
-
-  **MPP data warehouse** deployable in cloud or data center. **Pricing**: Three fixed-rate service plans—**Standard, Enterprise, Enterprise+**; Standard limited to 10 TB user data; Enterprise/Enterprise+ support 6 PB; includes native streaming, HA, and workload management . **Free tier**: None. **Best for**: regulated industries wanting predictable OPEX with warehouse performance in their own environment.
-
-
-
-- **Vertica**
-
-  **Columnar analytics database** with on-premises or cloud deployment. **Pricing**: **Licensed by logical data size (1 TB units)**; volume discounts; **DR and test environment licenses free**; runs on x86 servers without shared disk . **Free tier**: Free test/DR licenses. **Best for**: organizations wanting on-premises analytics with predictable licensing—**trade-off**: capacity planning required upfront.
-
-
+| Product | Company Valuation / Revenue | Pricing (Starting Tiers) | Free Tier Limits / Free Trial Details | Best For & Architectural Trade-offs |
+| :--- | :--- | :--- | :--- | :--- |
+| **Microsoft Fabric** | ~.88T Market Cap (Microsoft) | Capacity-based F SKUs: Starting at **F2 SKU (~.36/hour or ~/month)** pay-as-you-go; F64 baseline enterprise capacity ~,410/month | **60-day free trial** with full F64 capacity access and up to **1 TB OneLake storage** (Copilot and select enterprise AI features restricted) | **Best for**: Microsoft-centric organizations with Power BI and Azure investments.<br>**Trade-off**: Storage and networking egress billed separately from compute capacity. |
+| **Google BigQuery Enterprise** | ~.42T Market Cap (Alphabet) | Editions capacity pricing starting at **.06/slot-hour** (Enterprise Edition); On-demand queries start at **.25 per TB scanned** | **Always Free Tier**: **1 TB queries scanned/month** and **10 GB active storage/month**; GCP new customer credit of ** for 90 days** | **Best for**: Teams wanting zero operational overhead with spiky analytical workloads.<br>**Trade-off**: Editions require capacity forecasting; cost-effective break-even above ~50 slots. |
+| **Amazon Redshift** | ~.65T Market Cap (Amazon) | Redshift Serverless starting at **.36/RPU-hour** (us-east-1); Provisioned RA3 clusters starting at **.086/hour** (
+a3.xlplus) | **90-day free trial** for Serverless with ** credit allowance**; or **2-month free trial** of provisioned dc2.large nodes (**750 hours/month**) | **Best for**: AWS-centric organizations needing mature MPP with independent storage/compute scaling.<br>**Trade-off**: Serverless is cheaper primarily below ~70% utilization; steady 24/7 workloads favor Reserved Instances. |
+| **Oracle Exadata Cloud** | ~ Market Cap (Oracle) | Hourly database compute starting at **.3360/ECPU-hour** (License Included, ~/month for 2 ECPUs) or **.0807/ECPU-hour** (BYOL) | **30-day trial with  cloud credits** (dedicated Exadata infrastructure shapes exceed  trial limits, though Always Free tier includes 2 Autonomous DB instances with 20 GB storage) | **Best for**: Oracle-centric enterprises demanding maximum OLTP/OLAP blended performance.<br>**Trade-off**: High minimum infrastructure commitments; scaling compute to zero pauses ECPU billing but base rack/hardware subscriptions persist. |
+| **SAP Datasphere** | ~ Market Cap (SAP) | Capacity Units (CU) model starting at **€1.00/CU/month** with tenant entry minimum of **1,532 CUs/month (~€1,532/month)** | **30-day guided basic trial** with sample data in multi-tenant environment (limited admin/custom integration rights); restricted non-production SAP BTP Free Tier quotas | **Best for**: SAP-centric enterprises building an integrated enterprise business data fabric.<br>**Trade-off**: Multi-component capacity unit sizing requires SAP Datasphere Estimator modeling. |
+| **IBM Db2 Warehouse on Cloud** | ~ Market Cap (IBM) | Dedicated hourly configurations starting at **~,373/month** (~.25/vCPU-hour, .58/TB-hour block storage, .05/TB-hour object storage) | **Free trial with ,000 credit** (valid for 30 days) dedicated for Db2 Warehouse deployment, plus standard IBM Cloud  onboarding credit | **Best for**: IBM-centric enterprises needing managed Db2 with native in-database analytics and Gen 3 architecture.<br>**Trade-off**: Reserved Instance commitments lock instances for the term without early termination. |
+| **Snowflake Enterprise Edition** | ~ Market Cap (Snowflake) | Multi-cluster compute starting at **.00/credit** (Enterprise Edition, AWS US East; Standard .00/credit; Business Critical .00/credit) | **30-day free trial** with ** in usage credits** (expires when  is depleted or 30 days elapse) | **Best for**: Enterprises needing fully managed elasticity and absolute multi-workload isolation.<br>**Trade-off**: Consumption-based compute scaling requires vigilant warehouse resource monitors. |
+| **Teradata VantageCloud Enterprise** | ~.3B Market Cap (Teradata) | Unit-based enterprise consumption starting at **,000/month** (1-year commitment, includes 10 TB storage); Enterprise+ from ,500/month | **30-day free trial** with dedicated allotment of **TCore-Hours** (constrained to 2–3 small node instances, non-production SLA) | **Best for**: Large enterprises with mission-critical complex analytical workloads and existing Teradata ecosystems.<br>**Trade-off**: Upfront setup fees and minimum 1-year enterprise commitments required. |
+| **Vertica** | ~ Divestiture Value / ~ Annual Revenue (Rocket Software / OpenText) | Commercial licensing by logical data size (1 TB units); Community Edition ** (Free)** | **Community Edition (Perpetual Free Tier)**: Up to **3 nodes** and **1 TB raw user data** (up to 3 TB external data queries) with no expiration | **Best for**: Organizations requiring on-premises or private cloud columnar analytics with predictable flat licensing.<br>**Trade-off**: Requires upfront hardware and capacity planning; free tier restricted to small clusters. |
+| **Yellowbrick** | ~– Est. Valuation / ~ Total Raised (Private) | Standard Service Plan starting at **,000/month**; On-Demand burst compute at **.28/vCPU-hour** (annual subscriptions drop to ~.07/vCPU-hour) | **30-day free trial** for hands-on evaluation of Standard Service Plan in customer cloud account / private VPC | **Best for**: Regulated enterprises wanting predictable OPEX and data warehouse speed deployed in their own private cloud or data center.<br>**Trade-off**: High entry price tier (/month baseline plan); runs inside customer-managed infrastructure. |
 
 ## Open-Source GitHub Projects
 
